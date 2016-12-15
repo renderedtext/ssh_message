@@ -1,5 +1,9 @@
 require "ssh_message/version"
 
 module SshMessage
-  # Your code goes here...
+  module_function
+
+  def compose
+
+  end
 end
