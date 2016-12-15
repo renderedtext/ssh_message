@@ -20,6 +20,15 @@ describe SshMessage do
     :job_index => 12
   }}
 
+  it "composes a string" do
+    # dummy test for easy visual testing
+    message = SshMessage.compose(info)
+
+    puts message
+
+    expect(message).to be_instance_of(String)
+  end
+
   it "composes an ssh message" do
 expected_message = <<HERE
            *****      *****
@@ -47,7 +56,7 @@ HERE
 
     message = without_colors(SshMessage.compose(info)).split("\n").map(&:rstrip).join("\n") + "\n"
 
-    expect(message).to eq(expected_message)
+    expect(message).to eq("\n" + expected_message)
   end
 
   it "keeps the lenght of lines under 100 characters" do

@@ -12,7 +12,7 @@ module SshMessage
     def lines
       [
         "",
-        SshMessage::Colors.cyan(TITLE),
+        SshMessage::Colors.yellow(TITLE),
         "",
         render_line("Kernel", info.fetch(:kernel)),
         render_line("User",   info.fetch(:user)),
@@ -38,7 +38,7 @@ module SshMessage
     private
 
     def render_line(title, value)
-      SshMessage::Colors.cyan("#{title}: ") + value.to_s
+      SshMessage::Colors.yellow("#{title}: ") + value.to_s
     end
   end
 end

@@ -10,7 +10,7 @@ module SshMessage
       "\e[32m#{text}\e[0m"
     end
 
-    def cyan(text)
+    def yellow(text)
       "\e[33m#{text}\e[0m"
     end
 
