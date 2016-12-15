@@ -10,7 +10,7 @@ module SshMessage
     logo = SshMessage::Logo.lines
     legend = SshMessage::Legend.new(info).lines
 
-    logo.zip(legend).map { |pair| "#{pair[0]}     #{pair[1]}" }.join("\n")
+    "\n" + logo.zip(legend).map { |pair| "#{pair[0]}     #{pair[1]}" }.join("\n") + "\n"
   end
 
 end
