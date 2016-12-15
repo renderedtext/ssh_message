@@ -2,8 +2,8 @@
 
 Render awesome motd messages for Semaphore's SSH sessions.
 
-![docs/dark.png]
-![docs/light.png]
+![](docs/dark.png)
+![](docs/light.png)
 
 ## Installation
 
