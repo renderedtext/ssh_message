@@ -1,8 +1,9 @@
-# SshMessage
+# Ssh Message
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ssh_message`. To experiment with that code, run `bin/console` for an interactive prompt.
+Render awesome motd messages for Semaphore's SSH sessions.
 
-TODO: Delete this and the text above, and describe your gem
+![docs/dark.png]
+![docs/light.png]
 
 ## Installation
 
@@ -12,30 +13,33 @@ Add this line to your application's Gemfile:
 gem 'ssh_message'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install ssh_message
-
 ## Usage
 
-TODO: Write usage instructions here
+To compose an ssh message, do the following:
+
+``` ruby
+info = {
+  :kernel => "Linux 3.1.2",
+  :user => "runner",
+  :project_name => "semaphore",
+  :branch_name => "is/pretty_ssh_message",
+  :commit_sha => "b50069befccb8e6c31f14c142af96699101b4ee3",
+  :build_number => 23,
+  :job_count => 64,
+  :job_index => 12
+}
+
+SshMessage.compose(info)
+```
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ssh_message. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/renderedtext/ssh_message. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
