@@ -3,6 +3,8 @@ module SshMessage
 
     TITLE = "Welcome to Semaphore's SSH session"
 
+    attr_reader :info
+
     def initialize(info = {})
       @info = info
     end
@@ -36,7 +38,7 @@ module SshMessage
     private
 
     def render_line(title, value)
-      SshMessage::Colors.cyan("#{title}: ") + value.to_s,
+      SshMessage::Colors.cyan("#{title}: ") + value.to_s
     end
   end
 end
