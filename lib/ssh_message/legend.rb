@@ -1,8 +1,6 @@
 module SshMessage
   class Legend
 
-    TITLE = "Welcome to Semaphore's SSH session"
-
     attr_reader :info
 
     def initialize(info = {})
@@ -11,27 +9,27 @@ module SshMessage
 
     def lines
       [
+        "Let's get started!",
         "",
-        SshMessage::Colors.yellow(TITLE),
+        "This is the place for testing out your CI box,",
+        "running your tests manually, or catching the final",
+        "bug that prevents your tests from turning green.",
+        "",
+        "This Semaphore Box contains:",
         "",
         render_line("Kernel", info.fetch(:kernel)),
         render_line("User",   info.fetch(:user)),
-        "",
         render_line("Project", info.fetch(:project_name)),
         render_line("Branch", info.fetch(:branch_name)),
         render_line("Commit", info.fetch(:commit_sha)),
         render_line("Build Number", info.fetch(:build_number)),
         render_line("Job", "#{info.fetch(:job_index)}/#{info.fetch(:job_count)}"),
         "",
-        "Lorem ipsum dolor sit amet, ex sea possim probatus.",
-        "Et ignota discere his. Nam partem facete cu. Molestie",
-        "velit deseruisse est ex, audire inimicus mei cu.",
-        "eu, augue patrioque nam no. Audire sanctus at sit,",
-        "homero. Ex cotidieque adversarium vis, in sint",
-        "corrumpit mel, an qui civibus accusamus. Ius id stet",
-        "copiosae. Ad pri omnes graeci.",
+        "For additional information, please consult our",
+        "documentation at " + SshMessage::Colors.yellow("https://semaphoreci.com/docs") + ", or",
+        "contact us on support. We are always happy to help!",
         "",
-        "https://semaphoreci.com/docs"
+        "Happy building :)"
       ]
     end
 

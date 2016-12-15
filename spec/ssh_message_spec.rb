@@ -31,27 +31,27 @@ describe SshMessage do
 
   it "composes an ssh message" do
 expected_message = <<HERE
-           *****      *****
-          ******************                Welcome to Semaphore's SSH session
-           *****************
-           *****************                Kernel: Linux 3.1.2
-        *******************                 User: runner
+           *****      *****                 Let's get started!
+          ******************
+           *****************                This is the place for testing out your CI box,
+           *****************                running your tests manually, or catching the final
+        *******************                 bug that prevents your tests from turning green.
   ***********************    *******
-  *********************    *********        Project: semaphore
-  ********************    ***********       Branch: is/pretty_ssh_message
-   ************         ***********         Commit: b50069befccb8e6c31f14c142af96699101b4ee3
-    **********          **********          Build Number: 23
-    **********          **********          Job: 12/64
-    **********          **********
-   ***********         ************         Lorem ipsum dolor sit amet, ex sea possim probatus.
- ***********    *********************       Et ignota discere his. Nam partem facete cu. Molestie
-  *********   **********************        velit deseruisse est ex, audire inimicus mei cu.
-   ******    **********************         eu, augue patrioque nam no. Audire sanctus at sit,
-           *******************              homero. Ex cotidieque adversarium vis, in sint
-          ******************                corrumpit mel, an qui civibus accusamus. Ius id stet
-          ******************                copiosae. Ad pri omnes graeci.
+  *********************    *********        This Semaphore Box contains:
+  ********************    ***********
+   ************         ***********         Kernel: Linux 3.1.2
+    **********          **********          User: runner
+    **********          **********          Project: semaphore
+    **********          **********          Branch: is/pretty_ssh_message
+   ***********         ************         Commit: b50069befccb8e6c31f14c142af96699101b4ee3
+ ***********    *********************       Build Number: 23
+  *********   **********************        Job: 12/64
+   ******    **********************
+           *******************              For additional information, please consult our
+          ******************                documentation at https://semaphoreci.com/docs, or
+          ******************                contact us on support. We are always happy to help!
          *******************
-          ******      *****                 https://semaphoreci.com/docs
+          ******      *****                 Happy building :)
 HERE
 
     message = without_colors(SshMessage.compose(info)).split("\n").map(&:rstrip).join("\n") + "\n"
