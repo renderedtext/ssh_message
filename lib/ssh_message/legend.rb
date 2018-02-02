@@ -15,6 +15,8 @@ module SshMessage
         "running your tests manually, or catching the final",
         "bug that prevents your tests from turning green.",
         "",
+        "Use the #{SshMessage::Colors.yellow("semaphore")} command to display and run commands.",
+        "",
         "This Semaphore Box contains:",
         "",
         render_line("Kernel", info.fetch(:kernel)),

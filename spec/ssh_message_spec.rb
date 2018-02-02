@@ -31,27 +31,29 @@ describe SshMessage do
 
   it "composes an ssh message" do
 expected_message = <<HERE
-           *****      *****                 Let's get started!
-          ******************
-           *****************                This is the place for testing out your CI box,
+                                            Let's get started!
+           *****      *****
+          ******************                This is the place for testing out your CI box,
            *****************                running your tests manually, or catching the final
-        *******************                 bug that prevents your tests from turning green.
-  ***********************    *******
-  *********************    *********        This Semaphore Box contains:
-  ********************    ***********
-   ************         ***********         Kernel: Linux 3.1.2
+           *****************                bug that prevents your tests from turning green.
+        *******************
+  ***********************    *******        Use the semaphore command to display and run commands.
+  *********************    *********
+  ********************    ***********       This Semaphore Box contains:
+   ************         ***********
+    **********          **********          Kernel: Linux 3.1.2
     **********          **********          User: runner
     **********          **********          Project: semaphore
-    **********          **********          Branch: is/pretty_ssh_message
-   ***********         ************         Commit: b50069befccb8e6c31f14c142af96699101b4ee3
- ***********    *********************       Build Number: 23
-  *********   **********************        Job: 12/64
-   ******    **********************
-           *******************              For additional information, please consult our
+   ***********         ************         Branch: is/pretty_ssh_message
+ ***********    *********************       Commit: b50069befccb8e6c31f14c142af96699101b4ee3
+  *********   **********************        Build Number: 23
+   ******    **********************         Job: 12/64
+           *******************
+          ******************                For additional information, please consult our
           ******************                documentation at https://semaphoreci.com/docs, or
-          ******************                contact us on support. We are always happy to help!
-         *******************
-          ******      *****                 Happy building :)
+         *******************                contact us on support. We are always happy to help!
+          ******      *****
+                                            Happy building :)
 HERE
 
     message = without_colors(SshMessage.compose(info)).split("\n").map(&:rstrip).join("\n") + "\n"
